@@ -1,5 +1,7 @@
 McMaps
 ======
+Originally created by Kroc Camen <http://camendesign.com>
+
 A set of PHP classes for reading and writing Minecraft map items, you can:
 
 * Set any image to a map, e.g.:

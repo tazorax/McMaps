@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 
 /* NOTE: This is a shell script. Please make it executable (`chmod +x test.php.sh`),
@@ -15,21 +14,21 @@ require __DIR__ . '/../vendor/autoload.php';
 /* put any image on a Minecraft map item:
    ====================================================================================================================== */
 //initialise the map
-$map = new McMap ();
+$map = new McMap();
 //load your image
-$src = imagecreatefrompng ("./test.png");
+$src = imagecreatefrompng("./test.png");
 //apply the image to the map
-$map->setImage ($src);
+$map->setImage($src);
 
 //if you want to, save the resulting conversion to visually confirm
-imagepng ($map->image, "./map_0.png");
+imagepng($map->image, "./map_0.png");
 
 //save the data file
-$map->save ("./map_0.dat");
+$map->save("./map_0.dat");
 
 //clean up
-unset ($src);
-unset ($map);
+unset($src);
+unset($map);
 
 
 /* write books in Minecraft:
@@ -37,21 +36,22 @@ unset ($map);
 //McMapBook is a class that, given text, generates multiple maps with the text on, automatically word-wrapping for you
 
 //initialise the book
-$book = new McMapBook (
-	//the full path to the data folder of the Minecraft world, e.g. '~/Application Support/minecraft/saves/World1/data/'
-	'./',
-	//the map ID to begin writing at, i.e. 'map_0.dat'
-	1
+$book = new McMapBook(
+//the full path to the data folder of the Minecraft world, e.g. '~/Application Support/minecraft/saves/World1/data/'
+    './',
+    //the map ID to begin writing at, i.e. 'map_0.dat'
+    1
 );
 $book->verbose = true;
-$book->colour = 16;	//see the colour palette in 'mcmap.php' and <minecraftwiki.net/wiki/Map_Item_Format#Color_table>
+$book->colour = 16;    //see the colour palette in 'mcmap.php' and <minecraftwiki.net/wiki/Map_Item_Format#Color_table>
 
 //note: ensure the number of maps required already exist in your minecraft world, if you use McMaps to generate a map that
 //	hasn’t yet been crafted in the game, when you craft it, it will be overwritten. just run your McMaps script again
 
 //write the text
 //(you can use the next ID returned to start another book)
-$next_id = $book->generate (<<<TXT
+$next_id = $book->generate(
+    <<<TXT
 Leisure by W. H. Davies
 
 What is this life if, full of care, we have no time to stand and stare?—
@@ -71,6 +71,4 @@ TXT
 );
 
 //clean up
-unset ($book);
-
-?>
+unset($book);

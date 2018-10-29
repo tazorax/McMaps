@@ -1,5 +1,5 @@
 {
-    "name": "krock/mcmaps",
+    "name": "tazorax/mcmaps",
     "description": "PHP script to read / write custom Minecraft map item images",
     "type": "library",
     "license": "Creative Commons Attribution 3.0 Unported (CC BY 3.0)",
@@ -18,5 +18,8 @@
         "psr-4": {
             "Kroc\\McMaps\\": "src/"
         }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.13"
     }
 }
